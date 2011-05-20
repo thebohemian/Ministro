@@ -42,6 +42,8 @@ import android.os.IBinder;
 import android.os.RemoteException;
 
 public class MinistroService extends Service {
+    private static final String TAG = "MinistroService";
+
     private static final String MINISTRO_CHECK_UPDATES_KEY="LASTCHECK";
     private static final String MINISTRO_REPOSITORY_KEY="REPOSITORY";
     private static final String MINISTRO_DEFAULT_REPOSITORY="stable";
@@ -401,7 +403,7 @@ public class MinistroService extends Service {
         }
         catch (RemoteException e)
         {
-            e.printStackTrace();
+            Log.w(TAG, "Was unable to do 'libs' callback after retrieving libraries. Ignoring and assuming that the other application exited.");
         }
 
     }
