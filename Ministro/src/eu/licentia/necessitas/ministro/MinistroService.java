@@ -40,6 +40,7 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.IBinder;
 import android.os.RemoteException;
+import android.util.Log;
 
 public class MinistroService extends Service {
     private static final String TAG = "MinistroService";
