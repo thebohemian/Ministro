@@ -395,7 +395,11 @@ public class MinistroService extends Service {
     }
 }
 
-// libraries loading order if very important, that why we MUST sort the them !!!!
+/** Sorter for libraries.
+ * 
+ * Hence the order in which the libraries have to be loaded is important, it is neccessary
+ * to sort them.
+ */
 class ModuleCompare implements Comparator<Module> {
     @Override
     public int compare(Module a, Module b) {
@@ -403,7 +407,10 @@ class ModuleCompare implements Comparator<Module> {
     }
 }
 
-// extra class used to manipulate libraries, it is ~ the same as Library class, but it has less fields
+/** Helper class which allows manipulating libraries.
+ * 
+ * It is similar to the {@link Library} class but has fewer fields.
+ */
 class Module
 {
     String path;
