@@ -419,7 +419,7 @@ public class MinistroService extends Service {
      * @param notFoundModules
      * @return
      */
-    private boolean checkModules(ArrayList<String> libs, ArrayList<String> notFoundModules)
+    boolean checkModules(ArrayList<String> libs, ArrayList<String> notFoundModules)
     {
         ArrayList<Module> modules= new ArrayList<Module>();
         boolean res=true;
@@ -509,14 +509,14 @@ public class MinistroService extends Service {
                 {
                     if (m_availableLibraries.get(i).depends != null)
                         for (int depIt=0;depIt<m_availableLibraries.get(i).depends.length;depIt++)
-                            addModules(m_availableLibraries.get(i).depends[depIt], modules, notFoundModulesObject);
+                            addModules(m_availableLibraries.get(i).depends[depIt], modules, notFoundModules);
                     break;
                 }
             }
         }
         return false;
     }
-}
+
 
 /** Sorter for libraries.
  * 
@@ -539,5 +539,7 @@ static private class Module
     String path;
     String name;
     int level;
+
+}
 
 }
